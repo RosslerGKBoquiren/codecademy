@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Aguillar Family Wine Festival</title>
+  <link rel="stylesheet" type="text/css" href="reset.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Annual Aguillar Family Wine Festival</h1>
+  </header>
+  
+  <div class="container">
+    <!-- In index.html, inside of the <div> element that has the attribute class with a value of "container", create a new <table> element. -->
+    <table>
+      <!-- Inside of the <table> element, add a section for table headings using <thead>.
+      Then, add two rows inside of it using the table row element. -->
+      <thead>
+        <!-- Inside the first table row element, from task 2, add a table heading element. Inside of that, include an <h1> with the following text: Wine Festival Schedule. -->
+        <tr>
+          <!-- colspan added here based on line 35 -->
+          <th colspan="2">
+            <h1>Wine Festival Schedule</h1>
+          </th>
+        </tr>
+          <!-- Inside the second table row element, from task 2, add two <th>s:
+          In the first, add an <h2> that says Time.
+          In the second, add an <h2> that says Event. -->
+        <tr>
+          <!-- You may notice that “Wine Festival Schedule” does not stretch across the entire table. Let’s fix that!
+          In the opening <th> tag of this element, add colspan="2". -->
+          <th>Time</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <!-- Below the closing </thead> tag, section off the table using the table body element. -->
+      <tbody>
+        <!-- Inside of the table body you created in the previous task, create 5 rows using the table row element. -->
+        <!-- Inside each row, create two cells using the table data element.
+        The first table data in each row should have the attribute class with the value "left". -->
+        <tr>
+          <!-- inside each row, create two cells using the table data element.
+          The first table data in each row should have the attribute class with the value "left". -->
+          <td class="left">
+            <!-- Inside each of the 5 <td class="left"> elements, add <h3> elements that include the times of the events:
+              12:00 PM
+              01:00 PM
+              02:00 PM
+              03:00 PM
+              04:00 PM -->
+            <h3>12:00 PM</h3>
+          </td>
+          <!-- Inside each of the <td> elements that does not have a class attribute with a value of "left", add <h3> elements that include the name of events:
+
+          Welcome Reception
+          Storytelling & Tasting
+          Wine Luncheon
+          Aguillar Family Wines
+          Wine & Cheese Tasting -->
+          <td>
+            <h3>Welcome Reception</h3>
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <h3>01:00 PM</h3>
+          </td>
+          <td>
+            <h3>Storytelling & Tasting</h3>
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <h3>02:00 PM</h3>
+          </td>
+          <td>
+            <h3>Wine Luncheon</h3>
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <h3>03:00 PM</h3>
+          </td>
+          <td>
+            <h3>Aquillar Family Wines</h3>
+          </td>
+        </tr>
+        <tr>
+          <td class="left">
+            <h3>04:00 PM</h3>
+          </td>
+          <td>
+            <h3>Wine & Cheese Tasting</h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <footer>
+    <h3>Contact</h3>
+    <h3>Location</h3>
+    <h3>Privacy Policy</h3>
+  </footer>
+</body>
+
+</html>
