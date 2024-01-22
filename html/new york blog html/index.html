@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <!-- Create a <nav> element underneath the opening <body> tag. -->
+      <ul>
+        <!-- Within the <nav> element, create a <ul> element to create an unordered list. The unordered list should contain the following three items:
+            Blog
+            Media
+            About -->
+        <li><a href="">Blog</a></li>
+        <li><a href="">Media</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </nav>
+    <header>
+      <!-- Create a <header> element under the closing </nav> tag. -->
+      <h1>New York City</h1>
+    </header>
+    <main>
+      <!-- Create a <main> element below the closing </header> tag.
+      Within the <main> element, create a <section> element with an id of “blog”. -->
+      <section id="blog">
+        <!-- Create an <article> element within the <section> element.
+        Then, create a <p> element within <article> -->
+        <article>
+          <p>
+            New York City is made up of five boroughs which include Queens,
+            Manhattan, Brooklyn, the Bronx, and Staten Island. The city is the
+            home of approximately 8 million people. In 1876, France gifted the
+            City of New York what is known as the Statue of Liberty, which is
+            currently located on Liberty Island and commonly visited by
+            tourists. However, it took 10 years to assemble and therefore wasn’t
+            unveiled until 1886. Another tourist destination is Times Square.
+            Times Square is commonly known for the big buildings, Broadway
+            shows, and bright neon signs. This famous location was named after
+            The New York Times after the Times moved to that location. Prior to
+            that, it was named Longacre Square. New York City is also known for
+            its bridges that connect the boroughs and allow ease of
+            transportation.
+          </p>
+        </article>
+      </section>
+      <!-- add a figure element under the closing section -->
+      <figure>
+        <img
+          src="https://content.codecademy.com/courses/Semantic%20HTML/statue-of-liberty.jpeg"
+        />
+        <!-- using figcaption, add a description of the image -->
+        <figcaption>
+          This is the Statue of Liberty, a popular tourist attraction located on
+          Liberty Island.
+        </figcaption>
+      </figure>
+      <!-- Under the closing </figure> tag create an <aside> element.
+      Within <aside>, create a <p> -->
+      <aside>
+        <p>
+          New York City is very popular for the variety of great food it has.
+          Some of the top food items in NYC include:
+        </p>
+        <!-- Create an ordered list by using the <ol> element within the <aside> element. The
+          ordered list should contain seven items in order -->
+        <ol>
+          <li>Pizza</li>
+          <li>Bagels</li>
+          <li>Burgers and Sandwiches</li>
+          <li>Ramen</li>
+          <li>Tacos</li>
+          <li>Pasta</li>
+          <li>Desserts</li>
+        </ol>
+      </aside>
+      <section id="media">
+        <!-- Create a <section> element with an id of “media” under the closing </aside> tag.
+        Within the new <section> element, create an <article> element.
+        Then, create an <h2> element within <article> -->
+        <article>
+          <h2>The Scenery in NYC</h2>
+          <!-- Add a <p> element directly underneath the closing </h2> tag but within the <article> element -->
+          <p>
+            While the view in the city is beautiful, the sounds are not as
+            lovely. Below you'll see an example of the view and the sounds
+            you'll deal with in NYC on a daily basis.
+          </p>
+        </article>
+        <!-- Under the closing </article> tag, create a <video> element with the attribute controls -->
+        <video controls src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-skyline-timelapse.mp4">
+          video not supported
+        </video>
+        <!-- Create an <embed> element under the closing </video> tag -->
+        <embed src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-skyline.jpeg"/>
+        <!-- create an <audio> tag with the attribute controls directly below the <embed> element -->
+        <audio controls>
+          <source src="https://content.codecademy.com/courses/Semantic%20HTML/nyc-sounds.mov" type="audio/mp3">
+        </audio>
+      </section>
+    </main>
+    <!-- Create a <footer> element with an id of “about” under the closing </main> tag. -->
+    <footer id="about">
+      <p>Posted by: Rossler Boquiren</p>
+      <p>Contact information: Blogger@NYC.com</p>
+    </footer>
+  </body>
+</html>
