@@ -101,3 +101,45 @@ print(scoops_sold)
 
 
 #Loops List Comprehensions: Introduction
+#for loop and a new list called doubled.
+# We have been provided a list of grades in a physics class. Using a list comprehension, create a new list called scaled_grades that scales the class grades based on the highest score.
+# Since the highest score was a 90 we simply want to add 10 points to all the grades in the list.
+grades = [90, 88, 62, 76, 74, 89, 48, 57]
+scaled_grades = [grade + 10 for grade in grades]
+#print scaled_grades
+print(scaled_grades)
+
+
+#Loops List Comprehensions: Conditionals
+heights = [161, 164, 156, 144, 158, 170, 163, 163, 157]
+#Using a list comprehension, create a new list called can_ride_coaster that has every element from heights that is greater than 161.
+can_ride_coaster = [height for height in heights if height > 161]
+#print can_ride_coaster
+print(can_ride_coaster)
+
+
+#In this lesson, you learned
+
+# How to write a for loop.
+# How to use range in a loop.
+# How to write a while loop.
+# What infinite loops are and how to avoid them.
+# How to control loops using break and continue.
+# How to write elegant loops as list comprehensions.
+
+# Your code below:
+#Create a list called single_digits that consists of the numbers 0-9 (inclusive).
+single_digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+#Create a for loop that goes through single_digits and prints out each one.
+for digits in single_digits:
+  print(single_digits[digits])
+#create a list called squares. Assign it to be an empty list to begin with.
+squares = []
+#Inside the loop that iterates through single_digits, append the squared value of each element of single_digits to the list squares.
+for number in single_digits:
+  squares.append(number ** 2)
+#print squares
+print(squares)
+#Create the list cubes using a list comprehension on the single_digits list. Each element of cubes should be an element of single_digits taken to the third power.
+cubes = [digit ** 3 for digit in single_digits]
+#print cube
