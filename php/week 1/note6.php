@@ -254,16 +254,67 @@ There are two ways to assign one variable to another:
 
 $favorites = ["food"=>"pizza", "person"=>"myself", "dog"=>"Tadpole"];
 
-$copy = $favorites;
+$copy = $favorites; // this creates a copy of the original, therefore a separate entity
 
-$alias =& $favorites;
+$alias =& $favorites; // &= means assigning a variable as a reference
 
-$favorites["food"] = "NEW!";
+$favorites["food"] = "NEW!"; // this changes the original and the reference
 
-echo $favorites["food"]; // Prints: NEW!
-echo $copy["food"]; // Prints: pizza
-echo $alias["food"]; // Prints: NEW!
+echo $favorites["food"]; // Prints: NEW! because the original was changed
+echo $copy["food"]; // Prints: pizza because it is a copy and retains the same value before the change 
+echo $alias["food"]; // Prints: NEW! because the referenced is changed when the original changed
 
 
 when passing arrays into functions, both built-in functions and those we write ourselves, we will want to be conscious of whether the arrays are being passed by value or by reference. 
 
+function changeColor ($arr)
+{
+	$arr['color'] = 'red';
+}
+
+$object = ['shape' => 'square', 'size' => 'small', 'color'=> 'green'];
+
+changeColor($object);
+
+echo $object['color']; //prints: green
+
+our function above doesn't accept its array argument by reference. Therefore, $arr is merely assigned a copy of the argument's value. This copy array is changed when the function is invoked, but that doesn't affect the original argument array ($object). 
+
+function reallyChangeColor (&$arr) // the only thing that changed is adding (&) beside the argument
+{
+  $arr["color"] = "red";    
+}
+
+$object = ["shape"=>"square", "size"=>"small", "color"=>"green"];
+
+reallyChangeColor ($object);
+
+echo $object["color"]; // Prints: red
+
+<?php
+namespace Codecademy;
+$doge_meme = ["top_text" => "Such Python", "bottom_text" => "Very language. Wow.", "img" => "very-cute-dog.jpg", "description" => "An adorable doge looks confused."];
+
+$bad_meme = ["top_text" => "i don't know", "bottom_text" => "i can't think of anything", "img" => "very-fat-cat.jpg", "description" => "A very fat cat looks happy."];
+
+// Write your code below:
+
+function createMeme($arr)
+{
+  $arr['top_text'] = 'Much PHP';
+  $arr['bottom_text'] = 'Very programming. Wow.';
+  return $arr;
+}
+
+$meme = ['top_text', 'bottom_text', 'img', 'description'];
+
+$php_doge = createMeme($doge_meme);
+
+function fixMeme(&$permanent)
+{
+  $permanent['top_text'] = 'Much PHP';
+  $permanent['bottom_text'] = 'Very programming. Wow.';
+  return $permanent;
+}
+
+fixMeme($bad_meme);
