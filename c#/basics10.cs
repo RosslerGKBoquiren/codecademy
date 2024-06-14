@@ -307,3 +307,214 @@ namespace BasicClasses
     }
   }
 }
+
+
+// Get only properties
+Previously we used properties for field validation by applying public and private
+
+Recall our imaginary Area property. Say we want programs to get the value of the property
+but we dont want programs to set the value of the property. Then we either:
+
+1. dont include a set() method or
+2. make the set() method private  
+
+
+ex. 1. 
+public string Area 
+{
+  get { return area; }
+}
+
+
+ex.2.  
+public int Area
+{
+  get {return area; }
+  private set { area = value; }
+}
+
+
+Forest.cs 
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+
+    public int Age
+    {
+      get { return age; }
+      private set { age = value; }
+    }
+    
+    
+  }
+
+}
+
+
+
+Program.cs 
+using System;
+
+namespace BasicClasses
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Forest f = new Forest();
+      f.Name = "Congo";
+      f.Trees = 0;
+      f.Age = 0;
+      f.Biome = "Desert";
+      
+      Console.WriteLine(f.Name);
+      Console.WriteLine(f.Biome);
+    }
+  }
+}
+
+
+// methods
+the third type of member in classes is methods. 
+Methods are also used to define how an instance of a class behaves. 
+You can think of them as the "actions" that an object can perform. 
+
+This code defines a method IncreaseArea() that changes the value of the Area property:
+
+class Forest
+{
+  public int Area 
+  {
+    /* property body omitted */
+  }
+  public int IncreaseArea(int growth)
+  {
+    Area = Area + growth;
+    return Area;
+  }
+}
+
+You would call the method like so:
+Forest f = new Forest();
+int result = f.IncreaseArea(2);
+Console.WriteLine(result); // prints 2
+
+
+Forest.cs 
+using System;
+
+namespace BasicClasses
+{
+  class Forest
+  {
+    public int age;
+    private string biome;
+    
+    public string Name
+    { get; set; }
+    
+    public int Trees
+    { get; set; }
+    
+    public string Biome
+    {
+      get { return biome; }
+      set
+      {
+        if (value == "Tropical" ||
+            value == "Temperate" ||
+            value == "Boreal")
+        {
+          biome = value;
+        }
+        else
+        {
+          biome = "Unknown";
+        }
+      }
+    }
+    
+    public int Age
+    { 
+      get { return age; }
+      private set { age = value; }
+    }
+
+    public int Grow()
+    {
+      Trees += 30;
+      Age++;
+      return Trees;
+    }
+
+    public int Burn()
+    {
+      Trees -= 20;
+      Age++;
+      return Trees;
+    }
+
+    
+  }
+
+}
+
+
+
+// constructors
+C# has a special type of method, called a constructor, that does just that. It looks like a method 
+but there is no return type listed and the method name is the name of its enclosing class. 
+
+class Forest 
+{
+  public Forest()
+  {
+
+  }
+}
+
+we can add code in the constructor to set values to fields. 
+
+class Forest 
+{
+  public int Area;
+
+  public Forest(int area)
+  {
+    Area = area;
+  }
+}
+
+This constructor method is used whenever we instantiate an object with the new keyword:
+
+Forest f = new Forest(400);
