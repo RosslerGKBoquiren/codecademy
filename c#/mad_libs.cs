@@ -90,7 +90,7 @@ namespace MadLibs
       Console.WriteLine("Dessert saved!\n");
 
       Console.Write("Please enter a value for a year: \n");
-      int year = Console.ReadLine();
+      int year = Int32.Parse(Console.ReadLine());
       Console.WriteLine("Year saved!\n");
 
       Console.Write("Press any key to continue...");
