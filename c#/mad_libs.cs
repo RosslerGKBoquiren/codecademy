@@ -6,52 +6,103 @@ namespace MadLibs
   {
     static void Main(string[] args)
     {
+      /* Madlibs 
+      Set up*/
       /*
-      This program is a Mad Lib - short stories with blanks for the player to fill in
-      Author: Ross Boquiren
+      This program ...
+      Author: ...
       */
 
 
       // Let the user know that the program is starting:
-      Console.WriteLine("Game start!");
+      Console.WriteLine("The program is starting!\n");
 
       // Give the Mad Lib a title:
-      string title = "Mad Lib Game";
+      string title = "Madlibs\n";
 
       Console.WriteLine(title);
       // Define user input and variables:
-      Console.Write("Enter a name: ");
+      Console.Write("Please enter your name: \n");
       string name = Console.ReadLine();
-      Console.Write("Enter a color: ");
-      string color = Console.ReadLine();
-      Console.Write("Enter a feeling: ");
-      string feeling = Console.ReadLine();
-      Console.Write("Enter a person: ");
-      string person = Console.ReadLine();
-      Console.Write("Enter a thing: ");
-      string thing = Console.ReadLine();
-      Console.Write("Enter a verb: ");
+      Console.WriteLine("Name saved!\n");
+
+      Console.Write("Enter an Adjective #1: \n");
+      string adjective1 = Console.ReadLine();
+      Console.WriteLine("Adjective #1 saved!\n");
+
+      Console.Write("Please enter adjective #2: \n");
+      string adjective2 = Console.ReadLine();
+      Console.WriteLine("Adjective #2 saved!\n");
+
+      Console.WriteLine("Please enter adjective #3: \n");
+      string adjective3 = Console.ReadLine();
+      Console.WriteLine("Adjective #3 saved!\n");
+
+      Console.Write("Press any key to continue...");
+      Console.ReadKey();
+
+      Console.Clear();
+
+      Console.WriteLine("Please enter a verb: \n");
       string verb = Console.ReadLine();
-      Console.Write("Enter a texture: ");
-      string texture = Console.ReadLine();
-      Console.Write("Enter an animal: ");
+      Console.WriteLine("Verb saved!\n");
+
+      Console.Write("Press any key to continue...");
+      Console.ReadKey();
+
+      Console.Clear();
+
+      Console.Write("Please enter a noun: \n");
+      string noun1 = Console.ReadLine();
+      Console.WriteLine("Noun #1 saved!\n");
+
+      Console.Write("Please enter noun #2: \n");
+      string noun2 = Console.ReadLine();
+      Console.WriteLine("Noun #2 saved!\n");
+
+      Console.Write("Press any key to continue...");
+      Console.ReadKey();
+
+      Console.Clear();
+
+      Console.Write("Enter a value for the following: \nAn animal: \n");
       string animal = Console.ReadLine();
-      Console.Write("Enter a food: ");
+      Console.WriteLine("Animal saved!\n");
+
+      Console.Write("Enter a value for food: \n");
       string food = Console.ReadLine();
-      Console.Write("Enter a fruit: ");
+      Console.WriteLine("Food saved!\n");
+
+      Console.Write("Please enter a value for fruit: \n");
       string fruit = Console.ReadLine();
-      Console.Write("Enter a superhero: ");
+      Console.WriteLine("Fruit saved!\n");
+
+      Console.Write("Please enter a value for a superhero: \n");
       string superhero = Console.ReadLine();
-      Console.Write("Enter a country: ");
+      Console.WriteLine("Superhero saved!\n");
+
+      Console.Write("Please enter a value for a country: \n");
       string country = Console.ReadLine();
-      Console.Write("Enter a dessert: ");
+      Console.WriteLine("Coutnry saved!\n");
+
+      Console.Write("Please enter a value for a dessert: \n");
       string dessert = Console.ReadLine();
-      Console.Write("Enter a year: ");
-      string year = Console.ReadLine();
+      Console.WriteLine("Dessert saved!\n");
+
+      Console.Write("Please enter a value for a year: \n");
+      int year = Console.ReadLine();
+      Console.WriteLine("Year saved!\n");
+
+      Console.Write("Press any key to continue...");
+      Console.ReadKey();
+
+      Console.Clear();
 
       // The template for the story:
 
-      string story = $"This morning {name} woke up feeling {color}. 'It is going to be a {feeling} day!' Outside, a bunch of {animal}s were protesting to keep {food} in stores. They began to {verb} to the rhythm of the {person}, which made all the {fruit}s very {texture}. Concerned, {name} texted {superhero}, who flew {name} to {country} and dropped {name} in a puddle of frozen {dessert}. {name} woke up in the year {year}, in a world where {thing}s ruled the world.";
+      string story = $"This morning {name} woke up feeling{adjective1}. 'It is going to be an {adjective2} day!' Outside, a bunch of {animal}s were protesting to keep 
+      {food} in stores. They began to {verb} to the rhythm of the {noun1}, which made all the {fruit}s very {adjective3}. Concerned, {name} texted {superhero}, who flew 
+      {name} to {country} and dropped {name} in a puddle of frozen {dessert}. {name} woke up in the year {year}, in a world where {noun2}s ruled the world.";
 
 
       // Print the story:
