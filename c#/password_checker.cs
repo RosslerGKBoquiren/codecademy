@@ -9,46 +9,50 @@ namespace PasswordChecker
       int minLength = 8;
       string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       string lowercase = "abcdefghijklmnopqrstuvwxyz";
-      string digits = "0123456789";
-      string specialChars = "~`!@#$%^&*()-_=+";
+      string digit = "0123456789";
+      string specialChars = "!@#$%^&*()-_=+";
 
       Console.Write("Enter a password: ");
-      string password = Console.ReadLine();
+      string passwordInput = Console.ReadLine();
+
       int score = 0;
 
-      if (password.Length >= minLength)
+      if (passwordInput.Length >= minLength)
       {
         score++;
       }
 
-      if (Tools.Contains(password, uppercase))
+      if (Tools.Contains(passwordInput, uppercase))
       {
         score++;
       }
 
-      if (Tools.Contains(password, lowercase))
+      if (Tools.Contains(passwordInput, lowercase))
       {
         score++;
       }
 
-      if (Tools.Contains(password, digits))
+      if (Tools.Contains(passwordInput, digit))
       {
         score++;
       }
 
-      if (Tools.Contains(password, specialChars))
+      if (Tools.Contains(passwordInput, specialChars))
       {
         score++;
       }
 
-      switch (score)
+      Console.WriteLine(score);
+
+
+      switch (score) 
       {
         case 4:
         case 5:
-          Console.WriteLine("Extremely strong!");
+          Console.WriteLine("extremely strong");
           break;
         case 3:
-          Console.WriteLine("strong!");
+          Console.WriteLine("strong");
           break;
         case 2:
           Console.WriteLine("medium");
@@ -57,9 +61,10 @@ namespace PasswordChecker
           Console.WriteLine("weak");
           break;
         default:
-          Console.WriteLine("doesn't meet any of the standards.");
+          Console.WriteLine("password doesn't meet any of the standards");
           break;
       }
+
     }
   }
 }
