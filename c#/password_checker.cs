@@ -6,6 +6,7 @@ namespace PasswordChecker
   {
     public static void Main(string[] args)
     {
+      // updated
       int minLength = 8;
       string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       string lowercase = "abcdefghijklmnopqrstuvwxyz";
