@@ -6,30 +6,38 @@ namespace ArchitectArithmetic
   {
     public static void Main(string[] args)
     {
-      double teotihuacanRect = RectangularArea(1500, 2500);
-      double teotihuacanCirc = (CircleArea(187.5)) / 2;
-      double teotihuacanTri = TriangleArea(750, 500);
-      double teotihuacanArea = Math.Round(teotihuacanRect + teotihuacanCirc + teotihuacanTri);
-      double materialCost = Math.Round(teotihuacanArea * 180);
-      Console.WriteLine($"Teotihuacan's total floor area is: {teotihuacanArea} sqm and the total cost for the materials are: {materialCost} Mexican Pesos");
+      // Calculate the areas of different parts of Teotihuacan
+      double teotihuacanRect = CalculateRectangularArea(1500, 2500);
+      double teotihuacanCirc = CalculateCircleArea(187.5) / 2;
+      double teotihuacanTri = CalculateTriangleArea(750, 500);
+
+      // Calculate the total area and round to 2 decimal places
+      double teotihuacanArea = Math.Round(teotihuacanRect + teotihuacanCirc + teotihuacanTri, 2);
+
+      // Calculate the total material cost and round to 2 decimal places
+      double materialCost = Math.Round(teotihuacanArea * 180, 2);
+
+      // Display the results
+      Console.WriteLine($"Teotihuacan's total floor area is: {teotihuacanArea} sqm and the total cost for the materials is: {materialCost} Mexican Pesos");
     }
 
-    static double RectangularArea(double length, double width) // define a method
+    static double CalculateRectangularArea(double length, double width)
     {
-      double areaRect = length * width;
-      return areaRect;
+      // Calculate and return the area of the rectangle
+      return length * width;
     }
 
-    static double CircleArea(double radius)
+    static double CalculateCircleArea(double radius)
     {
-      double areaCirc = Math.PI * Math.Pow(radius, 2);
-      return areaCirc;
+      // Calculate and return the area of the circle
+      return Math.PI * Math.Pow(radius, 2);
     }
 
-    static double TriangleArea(double bottom, double height)
+    static double CalculateTriangleArea(double bottom, double height)
     {
-      double areaTri = 0.5 * bottom * height;
-      return areaTri;
+      // Calculate and return the area of the triangle
+      return 0.5 * bottom * height;
     }
   }
 }
+
