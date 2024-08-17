@@ -8,7 +8,7 @@ namespace ExquisiteCorpse
     {
       RandomMode();
     }
-
+  // update
     static void RandomMode()
     {
       Random randomNumber = new Random();
