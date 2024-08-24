@@ -12,38 +12,55 @@ namespace TrueOrFalse
       Tools.SetUpInputStream(entry);
 
       // Type your code below
-      string[] questions = new string[] {"The sun is red? ", "Midgets are tall? ", "Gummy Bears are sweet? "};
-      bool[] answers = new bool[] {false, false, true};
-      bool[] responses = new bool[3];
+      string[] questions = {
+        "Is grass green?", 
+        "Do clouds float in the sky?", 
+        "Is the world flat?", 
+        "Does chocolate milk come from brown cows?"
+        };
+
+      bool[] answers = {true, true, false, false};
+      bool[] responses = new bool[4];
 
       if (questions.Length != answers.Length)
       {
-        Console.WriteLine("Warning! questions doesn't equal answers");
+        Console.WriteLine("There is not enough answers to questions.");
+        return;
       }
 
-      int askingIndex = 0;
-      foreach (var question in questions)
+      
+      for (int i = 0; i < questions.Length; i++)
       {
         string input;
         bool isBool;
         bool inputBool;
 
-        Console.Write(questions);
-        Console.Write("True or False? ");
+        Console.WriteLine(questions[i]);
+        Console.WriteLine("True or False? ");
         input = Console.ReadLine();
-
+        Console.WriteLine("\n");
+        
         isBool = Boolean.TryParse(input, out inputBool);
         if (isBool)
         {
-          responses[askingIndex] = inputBool;
+          responses[i] = inputBool;
         }
         else
         {
-          Console.WriteLine("Please respond with 'true' or 'false'.");
-          askingIndex--;
+          Console.WriteLine("Please enter True or False. ");
+          i--;
         }
+      }
 
-        askingIndex++;
+      
+      int score = 0;
+
+      for (int i = 0; i < questions.Length; i++)
+      {
+        if (responses[i] == answers[i])
+        {
+          score++;
+        }
       }
     }
   }
